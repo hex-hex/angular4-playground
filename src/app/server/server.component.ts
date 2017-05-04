@@ -9,6 +9,11 @@ export class ServerComponent implements OnInit {
   allowNewServer = false;
   serverId:number = 10;
   serverStatus: string = 'offline';
+  serverCreationStatus:string = 'No server was created.';
+  onCreateServer(){
+    alert("Added!");
+    this.serverCreationStatus = "There is a sever created";
+  }
   getServerStatus(){
     return this.serverStatus;
   }
