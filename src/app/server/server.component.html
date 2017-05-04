@@ -1,4 +1,6 @@
 <p>
-<button class="btn btn-primary"> OK </button>
+<button class="btn btn-success" [disabled]="!allowNewServer"> OK </button>
   {{'Server'}} with ID {{serverId}} is {{getServerStatus()}}
 </p>
+<div class="btn btn-primary" [innerText]="getServerStatus()"></div>
+<hr>
