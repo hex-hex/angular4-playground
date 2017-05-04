@@ -10,9 +10,13 @@ export class ServerComponent implements OnInit {
   serverId:number = 10;
   serverStatus: string = 'offline';
   serverCreationStatus:string = 'No server was created.';
+  serverName = '';
   onCreateServer(){
-    alert("Added!");
     this.serverCreationStatus = "There is a sever created";
+  }
+  onUpdateServerName(event:any){
+    console.log(event);
+    this.serverName = (<HTMLInputElement>event.target).value;
   }
   getServerStatus(){
     return this.serverStatus;
