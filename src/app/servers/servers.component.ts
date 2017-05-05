@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
   serverName = 'testName';
-  strOutput = '';
+  bServerCreated = false;
   onServer(){
-    this.strOutput = 'Create a server called:  ' + this.serverName;
+    this.bServerCreated = true;
   }
 
   constructor() { }

@@ -1,6 +1,12 @@
-<app-server></app-server>
 <input type="text" class="form-control" [(ngModel)]="serverName">
+<br>
 <div class="btn btn-warning" (click)="onServer()">Create</div>
-<p>{{strOutput}}</p>
-<app-server></app-server>
+<br>
+<p *ngIf="bServerCreated; else noServer">Created a server called {{serverName}}</p>
+<ng-template #noServer>
+  <p>No server was created!</p>
+</ng-template>
 <div>End.</div>
+<hr>
+<br>
+<app-server></app-server>

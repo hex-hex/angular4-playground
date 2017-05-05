@@ -18,14 +18,26 @@ export class ServerComponent implements OnInit {
     console.log(event);
     this.serverName = (<HTMLInputElement>event.target).value;
   }
+
+  getButtonColor(){
+    return this.serverCreationStatus === 'No server was created.' ?
+      'btn btn-warning' : 'btn btn-success' ;
+  }
+
   getServerStatus(){
     return this.serverStatus;
   }
+  getColor(){
+    return this.serverStatus === 'offline' ? 'red' : 'green';
+  }
+
   constructor() {
     setTimeout(()=>{
       this.allowNewServer = true;
     },2000);
+    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
    }
+
 
   ngOnInit() {
   }
